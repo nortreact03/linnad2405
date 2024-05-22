@@ -6,6 +6,7 @@ import Counter from './Counter';
 import LinnaPilt1 from './linn1.jpg'
 import LinnaPilt2 from './linn1.jpg'
 import LinnaPilt3 from './linn1.jpg'
+import { useState } from 'react';
 
 const moreCities = [
   {
@@ -26,21 +27,21 @@ const moreCities = [
 ]
 
 function App() {
-  const moreCitiesJsx = moreCities.map((city) => <Linn nimi={city.nimi} riik={city.riik} />)
+  const [activeCity, setActiveCity] = useState(0);
+  const moreCitiesJsx = moreCities.map((city) => <Linn2 nimi={city.nimi} />)
   return (
     <div className="App">
       <h1>Minu lemmiklinnad</h1>
-      <Counter />
-      <Linn nimi="Pariis" riik="Prantsusmaa" markused="asdfasdfasd" pilt={LinnaPilt1} />
-      <Linn nimi="Leon" riik="Prantsusmaa" markused="asdfasdfasd" pilt={LinnaPilt1}  />
-      <Linn nimi="Toulouse" riik="Prantsusmaa" markused="asdfasdfasd" pilt={LinnaPilt1} />
-      <Linn nimi="Berliin" riik="Saksamaa" markused="asdfasdfasd" />
-      <Linn nimi="London" riik="Inglismaa" markused="asdfasdfasd" />
-      <Linn nimi="Brighton" riik="Inglismaa" markused="kjhkjhkjhkjhkjh" />
-      {moreCitiesJsx}
+      <div className='container'>
+        <div className="leftPane">
+          {moreCitiesJsx}
+          <button onClick={() => setActiveCity(activeCity + 1)} >Next</button>
+        </div>
+        <div className='rightPane'>
+        <Linn nimi={moreCities[activeCity].nimi} riik={moreCities[activeCity].riik} />
+        </div>
 
-      <Linn2 nimi="Riia" pilt={LinnaPilt3} />
-
+      </div>
     </div>
   );
 }

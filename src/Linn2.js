@@ -1,8 +1,7 @@
-function Linn2({nimi, pilt}) {
+function Linn2({nimi}) {
     return (
-        <div>
-            <h2>Linn: {nimi}</h2>
-            <img src={pilt} alt="city pic"/>
+        <div> 
+            {nimi} 
         </div>
     )
 
