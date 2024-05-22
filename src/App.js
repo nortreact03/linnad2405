@@ -1,5 +1,7 @@
 import './App.css';
 import Linn from './Linn';
+import Linn2 from './Linn2';
+import Counter from './Counter';
 
 import LinnaPilt1 from './linn1.jpg'
 import LinnaPilt2 from './linn1.jpg'
@@ -28,6 +30,7 @@ function App() {
   return (
     <div className="App">
       <h1>Minu lemmiklinnad</h1>
+      <Counter />
       <Linn nimi="Pariis" riik="Prantsusmaa" markused="asdfasdfasd" pilt={LinnaPilt1} />
       <Linn nimi="Leon" riik="Prantsusmaa" markused="asdfasdfasd" pilt={LinnaPilt1}  />
       <Linn nimi="Toulouse" riik="Prantsusmaa" markused="asdfasdfasd" pilt={LinnaPilt1} />
@@ -35,6 +38,8 @@ function App() {
       <Linn nimi="London" riik="Inglismaa" markused="asdfasdfasd" />
       <Linn nimi="Brighton" riik="Inglismaa" markused="kjhkjhkjhkjhkjh" />
       {moreCitiesJsx}
+
+      <Linn2 nimi="Riia" pilt={LinnaPilt3} />
 
     </div>
   );

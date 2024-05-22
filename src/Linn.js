@@ -1,3 +1,5 @@
+import Counter from "./Counter";
+
 function Linn(props) {
     console.log(props)
     let cityStyle = "";
@@ -15,6 +17,7 @@ function Linn(props) {
             <h2 className={cityStyle}> {props.nimi}</h2>
             <h3>{props.riik}</h3>
             {remarks}
+            <Counter />
 
         </div>
     )
