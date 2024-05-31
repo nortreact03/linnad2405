@@ -28,7 +28,14 @@ const moreCities = [
 
 function App() {
   const [activeCity, setActiveCity] = useState(0);
-  const moreCitiesJsx = moreCities.map((city) => <Linn2 nimi={city.nimi} />)
+  const moreCitiesJsx = moreCities.map((city, index) => (
+    <div 
+      onClick={() => setActiveCity(index)}
+      className={activeCity === index ? 'nav-item nav-item__active' : 'nav-item'}
+    >  
+      <Linn2  nimi={city.nimi} />
+    </div>
+))
   return (
     <div className="App">
       <h1>Minu lemmiklinnad</h1>
